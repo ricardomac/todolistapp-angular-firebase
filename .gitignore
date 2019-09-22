@@ -8,7 +8,11 @@
 /bazel-out
 
 #environments
+<<<<<<< HEAD
 /environments
+=======
+**/src/environments/environment.ts
+>>>>>>> 0377906a22b252a4452e40249aef76475eb9edea
 
 # dependencies
 /node_modules
