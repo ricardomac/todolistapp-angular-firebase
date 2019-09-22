@@ -1,4 +1,78 @@
 /* You can add global styles to this file, and also import other style files */
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap');
+
+body {
+  box-sizing: border-box;
+  background: linear-gradient(90deg, #292467, #352d99);
+  font-family: 'Montserrat', sans-serif;
+}
+
 .hover-cursor {
   cursor: pointer;
+}
+
+.apptodo-container {
+  margin-top: 15%;
+  padding:10px;
+  background-color: #FFF;
+  box-shadow: 0px 1px 4px #1b1846;
+  border-radius: 4px;
+}
+
+.apptodo-container .row-custom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #292467;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.apptodo-container .row-custom .header h3,h4{
+  color: white;
+  font-weight: 600;
+}
+
+h4.header-subtitle {
+  font-weight: normal;
+  font-size: 16px;
+}
+
+.apptodo-container .row-custom .header-imgs {
+  display: flex;
+  flex-direction: row;
+}
+
+.header-imgs:hover img {
+  animation-name: rotateImg;
+  animation-duration: 2s;
+}
+
+@keyframes rotateImg {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotateY(190deg);
+    background-color: #292467;
+    border: 2px solid white;
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.apptodo-container .row-custom img {
+  background-color: #fff;
+  border-radius: 100%;
+  box-shadow: 0px 1px 4px #292467;
+  padding:5px;
+  max-width: 100px;
+  max-height: 80px;
+}
+
+.list-overflow {
+  height: 300px;
+  overflow: auto;
 }
