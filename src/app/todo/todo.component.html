@@ -1,34 +1,49 @@
-<div class="jumbotron" style="padding:45px 0px">
-  <h3 class="text-center">Angular e Firebase</h3>
-  <h4 class="text-center">TODO List App</h4>
-</div>
+<div class="apptodo-container">
+  <div class="row-custom">
 
-<div class="input-group">
-  <input type="text" class="form-control" #itemTitle>
-  <div class="input-group-append">
-    <button (click)="onAdd(itemTitle)" class="btn btn-outline-secondary" type="button">
-      <i class="fa fa-plus-circle"></i> Adicionar
-    </button>
+    <div class="header">
+      <h3 class="header-title">TODO List App</h3>
+      <h4 class="header-subtitle">Angular e Firebase</h4>
+    </div>
+
+    <div class="header-imgs">
+      <div class="angular-svg">
+        <img src="assets/angular.svg" alt="">
+      </div>
+      <div class="firebase-svg">
+        <img src="assets/firebase.svg" alt="">
+      </div>
+    </div>
+
   </div>
-</div>
 
-<div style="margin:5px 0px">
-  <ul class="list-group">
-    <li class="list-group-item" *ngFor="let item of toDoListArray">
-      <span class="hover-cursor" [class.text-success]="item.isChecked" (click)="alterCheck(item.$key,item.isChecked)">
-        <i class="fa fa-lg" [ngClass]="item.isChecked?'fa-check-circle-o':'fa-circle-thin'" ></i>
-      </span>
+  <div class="input-group">
+    <input type="text" placeholder="Tarefa" class="form-control" #itemTitle>
+    <div class="input-group-append">
+      <button (click)="onAdd(itemTitle)" class="btn btn-outline-secondary" type="button">
+        <i class="fa fa-plus-circle"></i> Adicionar
+      </button>
+    </div>
+  </div>
 
-      <ng-container *ngIf="item.isChecked; else notIsChecked">
+  <div class="list-overflow" style="margin:5px 0px">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let item of toDoListArray">
+        <span class="hover-cursor" [class.text-success]="item.isChecked" (click)="alterCheck(item.$key,item.isChecked)">
+          <i class="fa fa-lg" [ngClass]="item.isChecked?'fa-check-circle-o':'fa-circle-thin'"></i>
+        </span>
+
+        <ng-container *ngIf="item.isChecked; else notIsChecked">
           <del> {{item.title}}</del>
-      </ng-container>
-      <ng-template #notIsChecked>
-        {{item.title}}
-      </ng-template>
+        </ng-container>
+        <ng-template #notIsChecked>
+          {{item.title}}
+        </ng-template>
 
-      <span class="hover-cursor text-danger pull-right" (click)="onDelete(item.$key)" >
-        <i class="fa fa-trash-o fa-lg"></i>
-      </span>
-    </li>
-  </ul>
+        <span class="hover-cursor text-danger pull-right" (click)="onDelete(item.$key)">
+          <i class="fa fa-trash-o fa-lg"></i>
+        </span>
+      </li>
+    </ul>
+  </div>
 </div>
